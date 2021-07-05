@@ -9,12 +9,6 @@ function Home() {
       </div>
 
       <div className="spin-formBoxDiv">
-        <div className="flexGenre">
-          <div className="genre">Genre</div>
-          <div className="genreButtonDiv">
-            <button className="genreButton">All Genres</button>
-          </div>
-        </div>
         <div className="typefilterDiv">
           <form>
             <label for="check">
@@ -25,6 +19,17 @@ function Home() {
               TV Shows
             </label>
           </form>
+        </div>
+        <div className="flexGenre">
+          <div className="genre">Genre:</div>
+          <div className="genreButtonDiv">
+            <button className="genreButton">All Genres</button>
+          </div>
+        </div>
+
+        <div className="filterByScoreDiv">
+          <div className="scorefilter">Score:</div>
+          <button className="filterByScore">Score</button>
         </div>
         <div className="randomButtonDiv">
           <div className="spinButton">

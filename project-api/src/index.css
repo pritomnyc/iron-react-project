@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(97, 95, 95);
 }
 
 code {
@@ -12,27 +13,41 @@ code {
     monospace;
 }
 
-.spinDiv {
+/*CSS for home page*/
+
+.homePage{
+  margin: 0 200px 0 200px;
+}
+
+/* CSS for random spin section */
+.spin-formBoxDiv{
   background: rgba(255,255,255,0.15);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 30px 26px;
   min-height: 308px;
   box-sizing: border-box;
-}
-
-.spin-formBoxDiv{
   border:solid;
 }
-
 .flexGenre{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+.filterByScoreDiv{
   display:flex;
   flex-direction:row;
   justify-content: center;
 }
 
-.browsePopButton{
+/* CSS for the browse popular movies and tv show section */
+.doneWithRandom{
+  width:50%;
+  color: rgb(235, 231, 231);
+}
+
+.belowFormDiv{
   display:flex;
   flex-direction:row;
-  
 }
+
 
