@@ -5,7 +5,7 @@ function Navbar(props) {
   return (
     <div>
       <Link to="/">
-        <nav className="home" style={{ background: `#1DA1F2`, padding: `2em` }}>
+        <nav className="home" style={{ background: `#081118`, padding: `2em` }}>
           Logo
         </nav>
       </Link>

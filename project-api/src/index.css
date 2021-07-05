@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(97, 95, 95);
+  background-color: #24282e;
+  
 }
 
 code {
@@ -19,14 +20,33 @@ code {
   margin: 0 200px 0 200px;
 }
 
+/* CSS for NavBar */
+/* background-color: #081118; */
+
+
 /* CSS for random spin section */
-.spin-formBoxDiv{
+.topOfHome h2{
+  color:white;
+}
+button{
+  border-radius:6px;
+}
+.spin-formBoxSection{
   background: rgba(255,255,255,0.15);
   border-radius: 6px;
   padding: 30px 26px;
   min-height: 308px;
   box-sizing: border-box;
   border:solid;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.spinFormBigDiv{
+  width:50%;
+}
+.randomMoviePop{
+  width:50%;
 }
 .flexGenre{
   display:flex;
@@ -42,12 +62,22 @@ code {
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom{
   width:50%;
-  color: rgb(235, 231, 231);
+  /* color: rgb(235, 231, 231); */
 }
 
 .belowFormDiv{
   display:flex;
   flex-direction:row;
+  justify-content: space-around;
+}
+.browsePopButtonDiv{
+  display: flex;
+  align-items: center;
+}
+.browsePop{
+  padding:5px 5px;
+  font-size: 20px;
+  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
 }
 
 

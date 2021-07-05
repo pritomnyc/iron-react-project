@@ -17,16 +17,13 @@ function PopularMovies(props) {
   console.log(movies);
 
   function ShowPopMovies({ title, poster_path, overview, vote_average }) {
-    return (
-      movies.length > 0 &&
-      movies.map((movie) => {
-        return (
-          <div className="movie">
-            <img src={IMG_API + poster_path} alt={title} />
-          </div>
-        );
-      })
-    );
+    return movies.map((movie) => {
+      return (
+        <div className="movie">
+          <img src={IMG_API + poster_path} alt={title} />
+        </div>
+      );
+    });
   }
 
   //   return (
