@@ -26,7 +26,6 @@ function Home() {
             <button className="genreButton">All Genres</button>
           </div>
         </div>
-
         <div className="filterByScoreDiv">
           <div className="scorefilter">Score:</div>
           <button className="filterByScore">Score</button>
