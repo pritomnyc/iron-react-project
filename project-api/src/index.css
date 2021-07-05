@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.spinDiv {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  padding: 30px 26px;
+  min-height: 308px;
+  box-sizing: border-box;
+}
+
+.spin-formBoxDiv{
+  border:solid;
+}
+
+.flexGenre{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+}
+
+.browsePopButton{
+  display:flex;
+  flex-direction:row;
+  
+}
+
