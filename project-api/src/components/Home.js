@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Home() {
   let [quote, setQuote] = useState({});
 
+  //useEffect for GoT quote API
   useEffect(() => {
     console.log("is use effect working?");
     axios
@@ -19,7 +21,8 @@ function Home() {
     <div className="homePage">
       <div className="topOfHome">
         <h2>
-          <i>{`"${quote.sentence}"`}</i> - {`${quote.character /*.name*/}`}
+          {/* GoT quotes on home page */}
+          <i>{`"${quote.sentence}"`}</i> - {`${quote.character?.name}`}
         </h2>
       </div>
 
@@ -71,12 +74,14 @@ function Home() {
       <div className="belowFormDiv">
         <div className="doneWithRandom">
           <h2>
-            If you don't want a random movie or TV Show browse popular ones here
+            If you don't want a random Movie or TV Show browse popular ones here
           </h2>
         </div>
 
         <div className="browsePopButtonDiv">
-          <button className="browsePop">Browse Popular</button>
+          <Link to="/pop-movies">
+            <button className="browsePop">Browse Popular</button>
+          </Link>
         </div>
       </div>
     </div>
