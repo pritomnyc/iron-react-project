@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
+import "./popmovies.css";
+
+const IMG_API = "https://image.tmdb.org/t/p/w300";
 
 // api_key=892790fdb1ea1d1f1eead753a54cd422
 
@@ -47,26 +49,28 @@ function PopularMovies(props) {
       return (
         <>
           <header className="pop-header">
-            <form onSubmit={handleOnSubmit}></form>
+            {/* <form onSubmit={handleOnSubmit}></form>
             <input
               className="search"
               type="search"
               placeholder="Search..."
               value={searchTerm}
               onChange={handleOnChange}
-            />
+            /> */}
           </header>
           <div className="movie-container">
             <div className="movie-img">
               <img src={IMG_API + poster_path} alt={title} />
             </div>
-            <div className="movie-info">
-              <h3>{title}</h3>
-              <span>{vote_average}</span>
-            </div>
-            <div className="movie-over">
-              <h2>Overview:</h2>
-              <p>{overview}</p>
+            <div className="movieFlexDiv">
+              <div className="movie-info">
+                <h3>{title}</h3>
+                <span>{vote_average}</span>
+              </div>
+              <div className="movie-over">
+                <h2>Overview:</h2>
+                <p>{overview}</p>
+              </div>
             </div>
           </div>
         </>
@@ -76,7 +80,7 @@ function PopularMovies(props) {
 
   return (
     <div>
-      PopularMovies
+      {/* PopularMovies */}
       <ShowPopMovies />
     </div>
   );
