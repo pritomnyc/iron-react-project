@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #24282e;
+  background-color: #4f555f;
   
 }
 
@@ -21,16 +21,39 @@ code {
 }
 
 /* CSS for NavBar */
-/* background-color: #081118; */
+.homeNav{
+  display:flex;
+  color:white;
+  justify-content:flex-start;
+  align-items:center;
+}
+.homeLogo{
+  width:35px;
+}
+.popularNav{
+  padding: 0 0 0 20px;
+}
+.myListNav{
+  padding: 0 0 0 20px;
+}
 
 
 /* CSS for random spin section */
 .topOfHome h2{
   color:white;
 }
-button{
-  border-radius:6px;
+
+.dontKnowWhatToWatch{
+  display:flex;
+  align-items:flex-start;
+  flex-direction: column;
+  
 }
+
+
+
+
+/* CSS for Spin Box*/
 .spin-formBoxSection{
   background: rgba(255,255,255,0.15);
   border-radius: 6px;
@@ -43,8 +66,28 @@ button{
   align-items: center;
 }
 .spinFormBigDiv{
+  display: flex;
   width:50%;
+  flex-direction:column;
+  align-items:flex-start;
 }
+
+/* CSS for form spacing  */
+.typefilterDiv{
+  padding:15px 5px;
+}
+.flexGenre{
+  padding:15px 5px;
+}
+.filterByScoreDiv{
+  padding:15px 5px;
+}
+.randomButtonDiv{
+  padding:15px 5px;
+}
+
+
+
 .randomMoviePop{
   width:50%;
 }
@@ -59,10 +102,19 @@ button{
   justify-content: center;
 }
 
+/*Spin button CSS*/
+.spin{
+  background-color: rgb(10, 172, 247);
+  font-size: 20px;
+  padding:7px;
+  width:100%;
+  border-radius:30px;
+}
+
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom{
   width:50%;
-  /* color: rgb(235, 231, 231); */
+  color: rgb(235, 231, 231);
 }
 
 .belowFormDiv{
@@ -75,6 +127,7 @@ button{
   align-items: center;
 }
 .browsePop{
+  border-radius:30px;
   padding:5px 5px;
   font-size: 20px;
   background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));

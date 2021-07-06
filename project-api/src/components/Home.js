@@ -1,17 +1,41 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Home() {
+  let [quote, setQuote] = useState({});
+
+  useEffect(() => {
+    console.log("is use effect working?");
+    axios
+      .get(`https://game-of-thrones-quotes.herokuapp.com/v1/random`)
+      .then((res) => {
+        setQuote(res.data);
+        console.log(res.data);
+      });
+  }, []);
+
   return (
     <div className="homePage">
       <div className="topOfHome">
-        <h2>This is where a random movie quote will go</h2>
+        <h2>
+          <i>{`"${quote.sentence}"`}</i> - {`${quote.character /*.name*/}`}
+        </h2>
+      </div>
+
+      <div className="dontKnowWhatToWatch">
+        <h2>Don't Know What To Watch? Let Us Help.</h2>
+        <p>
+          If you're having trouble picking a movie or show to watch hit the{" "}
+          <i>spin</i> button below and let us decide.
+        </p>
       </div>
 
       <section className="spin-formBoxSection">
         <div className="spinFormBigDiv">
           <div className="typefilterDiv">
             <form>
-              <label for="check">
+              <label htmlFor="check">
                 Type:
                 <input id="check" type="checkbox" name="filterByTypeMovies" />
                 Movies
@@ -28,11 +52,13 @@ function Home() {
           </div>
           <div className="filterByScoreDiv">
             <div className="scorefilter">Score:</div>
-            <button className="filterByScore">Score</button>
+            <button className="filterByScore">All Scores</button>
           </div>
           <div className="randomButtonDiv">
             <div className="spinButton">
-              <button className="spin">Spin for Random</button>
+              <button className="spin">
+                <b>Spin for Random</b>
+              </button>
             </div>
           </div>
         </div>
