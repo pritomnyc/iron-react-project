@@ -69,7 +69,6 @@ code {
   align-items: flex-start;
 }
 
-
 /* CSS for form spacing  */
 .typefilterDiv {
   padding: 15px 5px;
@@ -100,7 +99,7 @@ code {
 
 /*Spin button CSS*/
 .spin {
-  background-color: rgb(10, 172, 247);
+  background-color: #6495ed;
   font-size: 20px;
   padding: 7px;
   width: 100%;
@@ -108,18 +107,17 @@ code {
 }
 
 /* CSS for random movie return  */
-.movieFlexDiv{
+.movieFlexDiv {
   display: flex;
 }
 .movie-info-home {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
-.mylist-popbutton{
-  border-radius:20px;
+.mylist-popbutton {
+  border-radius: 20px;
 }
-
 
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom {
