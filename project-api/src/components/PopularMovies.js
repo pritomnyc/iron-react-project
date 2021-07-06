@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./popmovies.css";
+import "../popmovies.css";
 
 const IMG_API = "https://image.tmdb.org/t/p/w300";
 
