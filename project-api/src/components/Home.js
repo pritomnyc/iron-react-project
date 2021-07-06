@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function Home() {
+const IMG_API = "https://image.tmdb.org/t/p/w200";
+
+function Home(props) {
   let [quote, setQuote] = useState({});
-  let [API, setAPI] = useState({});
+  let [movieAPI, setMovieAPI] = useState({});
 
   //useEffect for GoT quote API
   useEffect(() => {
-    console.log("is use effect working?");
     axios
       .get(`https://game-of-thrones-quotes.herokuapp.com/v1/random`)
       .then((res) => {
         setQuote(res.data);
-        console.log(res.data);
       });
   }, []);
 
@@ -26,11 +26,40 @@ function Home() {
         `https://api.themoviedb.org/3/movie/now_playing?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US&page=1`
       )
       .then((res2) => {
-        setAPI(res2.data);
-        console.log(res2.data);
+        setMovieAPI(res2.data.results);
+        console.log(res2.data.results);
+
+        let results = res2.data.results;
+        let randomIndex = Math.floor(Math.random() * results.length);
+        setMovieAPI(results[randomIndex]);
+        console.log(results[randomIndex]);
       });
   }, []);
 
+  // Function to show random movie onClick
+  function ShowRandomMovie() {
+    // return movieAPI.map(() => {
+    return (
+      <>
+        <div className="movie-container">
+          <div className="movie-img">
+            <img src={IMG_API + movieAPI.poster_path} alt={movieAPI.title} />
+          </div>
+          <div className="movieFlexDiv">
+            <div className="movie-info-home">
+              <h3>{movieAPI.title}</h3>
+              <span>Score: {movieAPI.vote_average}</span>
+              <button className="mylist-popbutton">+ My List</button>
+            </div>
+          </div>
+          <div className="mylist-button-poppage-div"></div>
+        </div>
+      </>
+    );
+  }
+  //End of showRandomMovie Function
+
+  // Return statement for entire page
   return (
     <div className="homePage">
       <div className="topOfHome">
@@ -73,7 +102,7 @@ function Home() {
           </div>
           <div className="randomButtonDiv">
             <div className="spinButton">
-              <button className="spin">
+              <button className="spin" onClick={ShowRandomMovie}>
                 <b>Spin for Random</b>
               </button>
             </div>
@@ -81,6 +110,9 @@ function Home() {
         </div>
 
         <div className="randomMoviePop">
+          <div className="spinMovieInfo">
+            <ShowRandomMovie />
+          </div>
           Spin for a random movie or TV show...
         </div>
       </section>
