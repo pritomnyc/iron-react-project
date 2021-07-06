@@ -22,27 +22,27 @@ function PopularMovies(props) {
   }, []);
   console.log(movies);
   //Search box functions
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
+  //   const handleOnSubmit = (e) => {
+  //     e.preventDefault();
 
-    //condition of search from API
-    if (searchTerm) {
-      axios
-        .get(
-          `https://api.themoviedb.org/3/search/movie?&api_key=892790fdb1ea1d1f1eead753a54cd422&query=` +
-            searchTerm
-        )
-        .then((res) => {
-          setMovies(res.data.results);
-        });
+  //     //condition of search from API
+  //     if (searchTerm) {
+  //       axios
+  //         .get(
+  //           `https://api.themoviedb.org/3/search/movie?&api_key=892790fdb1ea1d1f1eead753a54cd422&query=` +
+  //             searchTerm
+  //         )
+  //         .then((res) => {
+  //           setMovies(res.data.results);
+  //         });
 
-      setSearchTerm("");
-    }
-  };
+  //       setSearchTerm("");
+  //     }
+  //   };
 
-  const handleOnChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  //   const handleOnChange = (e) => {
+  //     setSearchTerm(e.target.value);
+  //   };
 
   function ShowPopMovies() {
     return movies.map(({ title, poster_path, overview, vote_average }) => {
@@ -71,6 +71,9 @@ function PopularMovies(props) {
                 <h2>Overview:</h2>
                 <p>{overview}</p>
               </div>
+            </div>
+            <div className="mylist-button-poppage-div">
+              <button className="mylist-popbutton">+ My List</button>
             </div>
           </div>
         </>

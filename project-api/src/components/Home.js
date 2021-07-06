@@ -5,6 +5,7 @@ import axios from "axios";
 
 function Home() {
   let [quote, setQuote] = useState({});
+  let [API, setAPI] = useState({});
 
   //useEffect for GoT quote API
   useEffect(() => {
@@ -14,6 +15,19 @@ function Home() {
       .then((res) => {
         setQuote(res.data);
         console.log(res.data);
+      });
+  }, []);
+
+  //useEffect for big movie/tv show API
+  useEffect(() => {
+    console.log("is the new effect working ?");
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US&page=1`
+      )
+      .then((res2) => {
+        setAPI(res2.data);
+        console.log(res2.data);
       });
   }, []);
 

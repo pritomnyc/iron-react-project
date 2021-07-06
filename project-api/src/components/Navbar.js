@@ -17,7 +17,9 @@ function Navbar(props) {
         <div className="popularNav">
           <Link to="/pop-movies">Most Popular</Link>
         </div>
-        <div className="myListNav">My List</div>
+        <div className="myListNav">
+          <Link to="/mylist">My List</Link>
+        </div>
       </nav>
     </div>
   );
