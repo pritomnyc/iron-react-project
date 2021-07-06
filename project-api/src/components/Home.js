@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Home() {
   let [quote, setQuote] = useState({});
@@ -75,9 +76,11 @@ function Home() {
           </h2>
         </div>
 
-        <div className="browsePopButtonDiv">
-          <button className="browsePop">Browse Popular</button>
-        </div>
+        <Link to="/pop-movies">
+          <div className="browsePopButtonDiv">
+            <button className="browsePop">Browse Popular</button>
+          </div>
+        </Link>
       </div>
     </div>
   );
