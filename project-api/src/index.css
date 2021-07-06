@@ -66,6 +66,7 @@ code {
   align-items: flex-start;
 }
 
+
 /* CSS for form spacing  */
 .typefilterDiv {
   padding: 15px 5px;
@@ -102,6 +103,20 @@ code {
   width: 100%;
   border-radius: 30px;
 }
+
+/* CSS for random movie return  */
+.movieFlexDiv{
+  display: flex;
+}
+.movie-info-home {
+  display:flex;
+  flex-direction:column;
+  justify-content: space-around;
+}
+.mylist-popbutton{
+  border-radius:20px;
+}
+
 
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom {
