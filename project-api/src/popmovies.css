@@ -1,4 +1,3 @@
-
 .movie-img {
   border-radius: 3px;
   padding: 1rem;
@@ -8,6 +7,8 @@
   margin: 1rem;
   background-color: aliceblue;
   border-radius: 3px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
 }
 
 .movie-container {
@@ -18,6 +19,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: maroon;
+}
+
+.movie-overview {
+  font-size: 18px;
 }
 
 /*.movie-container {

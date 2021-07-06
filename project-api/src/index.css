@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #4f555f;
+  background-color: darkgray;
 }
 
 code {
@@ -32,13 +32,16 @@ code {
 .popularNav {
   padding: 0 0 0 20px;
 }
+.populartvNav {
+  padding: 0 0 0 20px;
+}
 .myListNav {
   padding: 0 0 0 20px;
 }
 
 /* CSS for random spin section */
 .topOfHome h2 {
-  color: white;
+  color: brown;
 }
 
 .dontKnowWhatToWatch {
@@ -106,7 +109,7 @@ code {
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom {
   width: 50%;
-  color: rgb(235, 231, 231);
+  color: rgb(14, 62, 219);
 }
 
 .belowFormDiv {

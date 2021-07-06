@@ -41,7 +41,7 @@ function Home() {
       </div>
 
       <div className="dontKnowWhatToWatch">
-        <h2>Don't Know What To Watch? Let Us Help.</h2>
+        <h2>Don't Know What To Watch? Let Us Help 🙂</h2>
         <p>
           If you're having trouble picking a movie or show to watch hit the{" "}
           <i>spin</i> button below and let us decide.
@@ -89,6 +89,7 @@ function Home() {
         <div className="doneWithRandom">
           <h2>
             If you don't want a random Movie or TV Show browse popular ones here
+            👉
           </h2>
         </div>
 

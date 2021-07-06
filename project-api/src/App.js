@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import PopularMovies from "./components/PopularMovies";
 import List from "./components/List";
 import { Route, Switch } from "react-router-dom";
+import PopularTv from "./components/PopularTv";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/" render={(props) => <Home />} />
         <Route exact path="/pop-movies" render={(props) => <PopularMovies />} />
+        <Route exact path="/pop-tv" render={(props) => <PopularTv />} />
         <Route exact path="/mylist" render={(props) => <List />} />
       </Switch>
     </div>

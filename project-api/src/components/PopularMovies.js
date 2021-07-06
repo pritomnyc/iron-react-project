@@ -44,6 +44,11 @@ function PopularMovies(props) {
   //     setSearchTerm(e.target.value);
   //   };
 
+  //Saving movie to my list
+  const saveMovieList = async () => {
+    let res = await axios.post(`https://ironrest.herokuapp.com/`);
+  };
+
   function ShowPopMovies() {
     return movies.map(({ title, poster_path, overview, vote_average }) => {
       return (
@@ -65,15 +70,19 @@ function PopularMovies(props) {
             <div className="movieFlexDiv">
               <div className="movie-info">
                 <h3>{title}</h3>
-                <span>{vote_average}</span>
+                <span>
+                  <strong>{vote_average}</strong>
+                </span>
               </div>
               <div className="movie-over">
-                <h2>Overview:</h2>
+                <h2 className="movie-overview">Overview:</h2>
                 <p>{overview}</p>
               </div>
             </div>
             <div className="mylist-button-poppage-div">
-              <button className="mylist-popbutton">+ My List</button>
+              <button className="mylist-popbutton" onclick={saveMovieList}>
+                ➕ My List
+              </button>
             </div>
           </div>
         </>

@@ -7,7 +7,7 @@ function Navbar(props) {
     <div>
       <nav
         className="homeNav"
-        style={{ background: `#081118`, padding: `2em` }}
+        style={{ background: `#6495ed`, padding: `2em` }}
       >
         <div className="navLogoDiv">
           <Link to="/">
@@ -15,7 +15,10 @@ function Navbar(props) {
           </Link>
         </div>
         <div className="popularNav">
-          <Link to="/pop-movies">Most Popular</Link>
+          <Link to="/pop-movies">Popular Movies</Link>
+        </div>
+        <div className="populartvNav">
+          <Link to="/pop-tv">Popular TV Shows</Link>
         </div>
         <div className="myListNav">
           <Link to="/mylist">My List</Link>
