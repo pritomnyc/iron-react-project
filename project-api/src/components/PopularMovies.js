@@ -62,13 +62,15 @@ function PopularMovies(props) {
             <div className="movie-img">
               <img src={IMG_API + poster_path} alt={title} />
             </div>
-            <div className="movie-info">
-              <h3>{title}</h3>
-              <span>{vote_average}</span>
-            </div>
-            <div className="movie-over">
-              <h2>Overview:</h2>
-              <p>{overview}</p>
+            <div className="movieFlexDiv">
+              <div className="movie-info">
+                <h3>{title}</h3>
+                <span>{vote_average}</span>
+              </div>
+              <div className="movie-over">
+                <h2>Overview:</h2>
+                <p>{overview}</p>
+              </div>
             </div>
             <div className="mylist-button-poppage-div">
               <button className="mylist-popbutton">+ My List</button>

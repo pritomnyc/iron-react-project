@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Home() {
   let [quote, setQuote] = useState({});
+  let [API, setAPI] = useState({});
 
+  //useEffect for GoT quote API
   useEffect(() => {
     console.log("is use effect working?");
     axios
@@ -16,11 +18,25 @@ function Home() {
       });
   }, []);
 
+  //useEffect for big movie/tv show API
+  useEffect(() => {
+    console.log("is the new effect working ?");
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US&page=1`
+      )
+      .then((res2) => {
+        setAPI(res2.data);
+        console.log(res2.data);
+      });
+  }, []);
+
   return (
     <div className="homePage">
       <div className="topOfHome">
         <h2>
-          <i>{`"${quote.sentence}"`}</i> - {`${quote.character /*.name*/}`}
+          {/* GoT quotes on home page */}
+          <i>{`"${quote.sentence}"`}</i> - {`${quote.character?.name}`}
         </h2>
       </div>
 
@@ -72,15 +88,15 @@ function Home() {
       <div className="belowFormDiv">
         <div className="doneWithRandom">
           <h2>
-            If you don't want a random movie or TV Show browse popular ones here
+            If you don't want a random Movie or TV Show browse popular ones here
           </h2>
         </div>
 
-        <Link to="/pop-movies">
-          <div className="browsePopButtonDiv">
+        <div className="browsePopButtonDiv">
+          <Link to="/pop-movies">
             <button className="browsePop">Browse Popular</button>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );
