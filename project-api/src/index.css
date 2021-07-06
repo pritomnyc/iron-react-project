@@ -108,15 +108,18 @@ code {
 }
 
 /* CSS for random movie return  */
-.movieFlexDiv{
+
+.movie-container-home{
   display: flex;
+  flex-direction:row;
+  justify-content:space-around;
 }
 .movie-info-home {
   display:flex;
-  flex-direction:column;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content:space-around;
 }
-.mylist-popbutton{
+.mylist-popbutton-home{
   border-radius:20px;
 }
 

@@ -41,18 +41,17 @@ function Home(props) {
     // return movieAPI.map(() => {
     return (
       <>
-        <div className="movie-container">
-          <div className="movie-img">
+        <div className="movie-container-home">
+          <div className="movie-img-home">
             <img src={IMG_API + movieAPI.poster_path} alt={movieAPI.title} />
           </div>
-          <div className="movieFlexDiv">
+          <div className="movieFlexDiv-home">
             <div className="movie-info-home">
               <h3>{movieAPI.title}</h3>
-              <span>Score: {movieAPI.vote_average}</span>
-              <button className="mylist-popbutton">+ My List</button>
+              <p>Score: {movieAPI.vote_average}</p>
+              <button className="mylist-popbutton-home">+ My List</button>
             </div>
           </div>
-          <div className="mylist-button-poppage-div"></div>
         </div>
       </>
     );
@@ -70,7 +69,7 @@ function Home(props) {
       </div>
 
       <div className="dontKnowWhatToWatch">
-        <h2>Don't Know What To Watch? Let Us Help 🙂</h2>
+        <h2>Don't Know What To Watch? Let Us Help.</h2>
         <p>
           If you're having trouble picking a movie or show to watch hit the{" "}
           <i>spin</i> button below and let us decide.
@@ -121,7 +120,6 @@ function Home(props) {
         <div className="doneWithRandom">
           <h2>
             If you don't want a random Movie or TV Show browse popular ones here
-            👉
           </h2>
         </div>
 
