@@ -42,6 +42,7 @@ function Home(props) {
   // Function to show random movie onClick
 
   let [movieType, setMovieType] = useState("movies");
+
   let [showMovie, setShowMovie] = useState(false);
   function ShowRandomMovie() {
     return (
@@ -85,6 +86,9 @@ function Home(props) {
   }, []);
 
   //Start of showRandomTVshow Function
+
+  // let [tvType, setTvType] = useState("tv");
+  // let [showTv, setShowTv] = useState(false);
 
   function ShowRandomTV() {
     return (
@@ -173,10 +177,10 @@ function Home(props) {
             {showMovie && movieType == "movies" ? (
               <ShowRandomMovie />
             ) : (
-              "something"
+              "Spin for a random Movie or TV Show..."
             )}
+            {showMovie && movieType !== "movies" ? <ShowRandomTV /> : ""}
           </div>
-          Spin for a random movie or TV show...
         </div>
       </section>
 
