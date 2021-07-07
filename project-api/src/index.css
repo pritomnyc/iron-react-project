@@ -69,7 +69,6 @@ code {
   align-items: flex-start;
 }
 
-
 /* CSS for form spacing  */
 .typefilterDiv {
   padding: 15px 5px;
@@ -109,20 +108,19 @@ code {
 
 /* CSS for random movie return  */
 
-.movie-container-home{
+.movie-container-home {
   display: flex;
-  flex-direction:row;
-  justify-content:space-around;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .movie-info-home {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
 }
-.mylist-popbutton-home{
-  border-radius:20px;
+.mylist-popbutton-home {
+  border-radius: 20px;
 }
-
 
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom {
