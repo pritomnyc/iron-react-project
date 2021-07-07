@@ -5,7 +5,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: darkgray;
+  background: linear-gradient(-45deg, #db8b72, #82818b, #3d6675, #3f5a83e7);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 code {
@@ -21,10 +35,16 @@ code {
 
 /* CSS for NavBar */
 .homeNav {
+  /* display: flex;
+  color: #fffff0;
+  justify-content: flex-start;
+  align-items: center; */
+  height: 5px;
   display: flex;
-  color: white;
   justify-content: flex-start;
   align-items: center;
+  font-size: 1.2rem;
+  text-decoration: none !important;
 }
 .homeLogo {
   width: 35px;
@@ -32,6 +52,7 @@ code {
 .popularNav {
   padding: 0 0 0 20px;
 }
+
 .populartvNav {
   padding: 0 0 0 20px;
 }
@@ -39,9 +60,21 @@ code {
   padding: 0 0 0 20px;
 }
 
+.searchNav {
+  float: right;
+  padding-left: 1500px;
+  margin-top: 1px;
+  font-size: 18px;
+  border: none;
+}
+
 /* CSS for random spin section */
 .topOfHome h2 {
-  color: brown;
+  /* color: black;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7); */
+  color: rgba(0, 0, 0, 0.959);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
 }
 
 .dontKnowWhatToWatch {
@@ -57,7 +90,7 @@ code {
   padding: 30px 26px;
   min-height: 308px;
   box-sizing: border-box;
-  border: solid;
+  /* border: solid; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +117,7 @@ code {
 }
 
 .randomMoviePop {
-  width: 50%;
+  width: 55%;
 }
 .flexGenre {
   display: flex;
@@ -99,7 +132,7 @@ code {
 
 /*Spin button CSS*/
 .spin {
-  background-color: #6495ed;
+  background-color: cornflowerblue;
   font-size: 20px;
   padding: 7px;
   width: 100%;
@@ -125,7 +158,7 @@ code {
 /* CSS for the browse popular movies and tv show section */
 .doneWithRandom {
   width: 50%;
-  color: rgb(14, 62, 219);
+  color: black;
 }
 
 .belowFormDiv {

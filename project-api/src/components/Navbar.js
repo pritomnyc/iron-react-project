@@ -7,7 +7,12 @@ function Navbar(props) {
     <div>
       <nav
         className="homeNav"
-        style={{ background: `#6495ed`, padding: `2em` }}
+        style={{
+          background: `linear-gradient(15deg, #13547a 0%, #80d0c7 100%)`,
+          padding: `2em`,
+          color: `black`,
+        }}
+        //#6495ed
       >
         <div className="navLogoDiv">
           <Link to="/">
@@ -22,6 +27,9 @@ function Navbar(props) {
         </div>
         <div className="myListNav">
           <Link to="/mylist">My List</Link>
+        </div>
+        <div className="searchNav">
+          <input className="search" type="search" placeholder="Search..." />
         </div>
       </nav>
     </div>
