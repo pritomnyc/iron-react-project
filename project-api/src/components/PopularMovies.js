@@ -8,7 +8,6 @@ const IMG_API = "https://image.tmdb.org/t/p/w300";
 
 function PopularMovies(props) {
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -21,48 +20,20 @@ function PopularMovies(props) {
       });
   }, []);
   console.log(movies);
-  //Search box functions
-  //   const handleOnSubmit = (e) => {
-  //     e.preventDefault();
-
-  //     //condition of search from API
-  //     if (searchTerm) {
-  //       axios
-  //         .get(
-  //           `https://api.themoviedb.org/3/search/movie?&api_key=892790fdb1ea1d1f1eead753a54cd422&query=` +
-  //             searchTerm
-  //         )
-  //         .then((res) => {
-  //           setMovies(res.data.results);
-  //         });
-
-  //       setSearchTerm("");
-  //     }
-  //   };
-
-  //   const handleOnChange = (e) => {
-  //     setSearchTerm(e.target.value);
-  //   };
 
   //Saving movie to my list
-  const saveMovieList = async () => {
-    let res = await axios.post(`https://ironrest.herokuapp.com/`);
+  const saveMovieList = async (movie) => {
+    let res = await axios.post(
+      `https://ironrest.herokuapp.com/mymovielist`,
+      movie
+    );
+    console.log(res);
   };
 
   function ShowPopMovies() {
     return movies.map(({ title, poster_path, overview, vote_average }) => {
       return (
         <>
-          <header className="pop-header">
-            {/* <form onSubmit={handleOnSubmit}></form>
-            <input
-              className="search"
-              type="search"
-              placeholder="Search..."
-              value={searchTerm}
-              onChange={handleOnChange}
-            /> */}
-          </header>
           <div className="movie-container">
             <div className="movie-img">
               <img src={IMG_API + poster_path} alt={title} />
@@ -80,7 +51,12 @@ function PopularMovies(props) {
               </div>
             </div>
             <div className="mylist-button-poppage-div">
-              <button className="mylist-popbutton" onclick={saveMovieList}>
+              <button
+                className="mylist-popbutton"
+                onClick={() =>
+                  saveMovieList({ title, poster_path, overview, vote_average })
+                }
+              >
                 ➕ My List
               </button>
             </div>

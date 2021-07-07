@@ -24,8 +24,13 @@ function PopularTv(props) {
   console.log(tvShow);
 
   //Saving tv shows to my list
-  const saveTvList = async () => {
-    let res = await axios.post(`https://ironrest.herokuapp.com/`);
+  //Saving movie to my list
+  const saveTvList = async (tv) => {
+    let res = await axios.post(
+      `https://ironrest.herokuapp.com/mymovielist`,
+      tv
+    );
+    console.log(res);
   };
 
   function ShowTvShow() {
@@ -58,6 +63,7 @@ function PopularTv(props) {
       );
     });
   }
+
   return (
     <div>
       <ShowTvShow />
