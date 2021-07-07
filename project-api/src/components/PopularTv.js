@@ -30,7 +30,7 @@ function PopularTv(props) {
       `https://ironrest.herokuapp.com/mymovielist`,
       tv
     );
-    console.log(res);
+    console.log("this is onclick");
   };
 
   function ShowTvShow() {
@@ -54,7 +54,12 @@ function PopularTv(props) {
               </div>
             </div>
             <div className="mylist-button-poppage-div">
-              <button className="mylist-popbutton" onclick={saveTvList}>
+              <button
+                className="mylist-popbutton"
+                onclick={() =>
+                  saveTvList({ name, poster_path, overview, vote_average })
+                }
+              >
                 ➕ My List
               </button>
             </div>
