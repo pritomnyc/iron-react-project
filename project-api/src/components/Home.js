@@ -6,10 +6,10 @@ import axios from "axios";
 const IMG_API = "https://image.tmdb.org/t/p/w200";
 
 function Home(props) {
-  let [quote, setQuote] = useState({});
-  let [movieAPI, setMovieAPI] = useState({});
-
   //useEffect for GoT quote API
+
+  let [quote, setQuote] = useState({});
+
   useEffect(() => {
     axios
       .get(`https://game-of-thrones-quotes.herokuapp.com/v1/random`)
@@ -18,7 +18,10 @@ function Home(props) {
       });
   }, []);
 
-  //useEffect for big movie/tv show API
+  //useEffect for movie API
+
+  let [movieAPI, setMovieAPI] = useState({});
+
   useEffect(() => {
     console.log("is the new effect working ?");
     axios
@@ -38,7 +41,6 @@ function Home(props) {
 
   // Function to show random movie onClick
   function ShowRandomMovie() {
-    // return movieAPI.map(() => {
     return (
       <>
         <div className="movie-container-home">
@@ -57,6 +59,50 @@ function Home(props) {
     );
   }
   //End of showRandomMovie Function
+
+  //useEffect for random TV shows
+
+  let [tvAPI, setTvAPI] = useState({});
+
+  useEffect(() => {
+    console.log("is the tv effect working ?");
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/popular?api_key=892790fdb1ea1d1f1eead753a54cd422&page=1`
+      )
+      .then((res3) => {
+        setTvAPI(res3.data.results);
+        console.log(res3.data.results);
+
+        let results = res3.data.results;
+        let randomIndex = Math.floor(Math.random() * results.length);
+        setTvAPI(results[randomIndex]);
+        console.log(results[randomIndex]);
+      });
+  }, []);
+
+  //Start of showRandomTVshow Function
+
+  function ShowRandomTV() {
+    return (
+      <>
+        <div className="movie-container-home">
+          <div className="movie-img-home">
+            <img src={IMG_API + tvAPI.poster_path} alt={tvAPI.name} />
+          </div>
+          <div className="movieFlexDiv-home">
+            <div className="movie-info-home">
+              <h3>{tvAPI.name}</h3>
+              <p>Score: {tvAPI.vote_average}</p>
+              <button className="mylist-popbutton-home">+ My List</button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  //end of click function for random tv
 
   // Return statement for entire page
   return (
