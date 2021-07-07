@@ -38,8 +38,20 @@ function List(props) {
   //   );
   // }
 
+  // let [list, setList] = useState(movieList);
+
+  async function DeleteList(i) {
+    let copyOfList = [...movieList];
+    let res = await axios.delete(
+      `https://ironrest.herokuapp.com/mymovielist/${copyOfList[i]?._id}`
+    );
+    copyOfList.splice(i, 1);
+    setMovieList(copyOfList);
+    console.log("hello,i", i);
+  }
+
   const ShowMyMovies = () => {
-    return movieList.map((eachMovie) => {
+    return movieList.map((eachMovie, i) => {
       return (
         <>
           <div className="movie-container">
@@ -59,6 +71,11 @@ function List(props) {
               <div className="movie-over">
                 <h2 className="movie-overview">Overview:</h2>
                 <p>{eachMovie.overview}</p>
+              </div>
+              <div className="deleteButtonDiv">
+                <button className="deleteButton" onClick={() => DeleteList(i)}>
+                  Delete
+                </button>
               </div>
             </div>
           </div>

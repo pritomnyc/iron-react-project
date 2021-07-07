@@ -55,9 +55,7 @@ function Home(props) {
             <div className="movie-info-home">
               <h3>{movieAPI.title}</h3>
               <p>Score: {movieAPI.vote_average}</p>
-              <Link to="/mylist">
-                <button className="mylist-popbutton-home">+ My List</button>
-              </Link>
+              <button className="mylist-popbutton-home">+ My List</button>
             </div>
           </div>
         </div>
@@ -103,9 +101,7 @@ function Home(props) {
             <div className="movie-info-home">
               <h3>{tvAPI.name}</h3>
               <p>Score: {tvAPI.vote_average}</p>
-              <Link to="/mylist">
-                <button className="mylist-popbutton-home">+ My List</button>
-              </Link>
+              <button className="mylist-popbutton-home">+ My List</button>
             </div>
           </div>
         </div>
@@ -171,6 +167,7 @@ function Home(props) {
             <div className="spinButton">
               <button className="spin" onClick={() => setShowMovie(true)}>
                 <b>Spin for Random</b>
+                {/* {!showMovie && <b>Spin for Random</b>} */}
               </button>
             </div>
           </div>
@@ -178,12 +175,9 @@ function Home(props) {
 
         <div className="randomMoviePop">
           <div className="spinMovieInfo">
-            {showMovie && movieType == "movies" ? (
-              <ShowRandomMovie />
-            ) : (
-              "Spin for a random Movie or TV Show..."
-            )}
+            {showMovie && movieType == "movies" ? <ShowRandomMovie /> : ""}
             {showMovie && movieType !== "movies" ? <ShowRandomTV /> : ""}
+            {!showMovie && "Spin for a random Movie or TV Show..."}
           </div>
         </div>
       </section>
