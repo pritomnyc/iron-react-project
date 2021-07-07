@@ -40,6 +40,9 @@ function Home(props) {
   }, []);
 
   // Function to show random movie onClick
+
+  let [movieType, setMovieType] = useState("movies");
+  let [showMovie, setShowMovie] = useState(false);
   function ShowRandomMovie() {
     return (
       <>
@@ -128,9 +131,20 @@ function Home(props) {
             <form>
               <label htmlFor="check">
                 Type:
-                <input id="check" type="checkbox" name="filterByTypeMovies" />
+                <input
+                  id="check"
+                  type="radio"
+                  name="filterByType"
+                  checked
+                  onChange={() => setMovieType("movies")}
+                />
                 Movies
-                <input id="check" type="checkbox" name="filterByTypeTvShows" />
+                <input
+                  id="check"
+                  type="radio"
+                  name="filterByType"
+                  onChange={() => setMovieType("tv")}
+                />
                 TV Shows
               </label>
             </form>
@@ -147,7 +161,7 @@ function Home(props) {
           </div>
           <div className="randomButtonDiv">
             <div className="spinButton">
-              <button className="spin" onClick={ShowRandomMovie}>
+              <button className="spin" onClick={() => setShowMovie(true)}>
                 <b>Spin for Random</b>
               </button>
             </div>
@@ -156,7 +170,11 @@ function Home(props) {
 
         <div className="randomMoviePop">
           <div className="spinMovieInfo">
-            <ShowRandomMovie />
+            {showMovie && movieType == "movies" ? (
+              <ShowRandomMovie />
+            ) : (
+              "something"
+            )}
           </div>
           Spin for a random movie or TV show...
         </div>
