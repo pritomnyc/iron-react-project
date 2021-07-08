@@ -30,7 +30,8 @@ function SingleMovie(props) {
 
   return (
     <div>
-      <div className="youtubevideodiv">
+      {/* TypeError: Cannot read property 'key' of undefined */}
+      {/* <div className="youtubevideodiv">
         <iframe
           className="singleVideo"
           src={`https://www.youtube.com/embed/${video[0].key}`}
@@ -39,7 +40,7 @@ function SingleMovie(props) {
           allowfullscreen
           title="video"
         />
-      </div>
+      </div> */}
       <div className="singleMovieContainer">
         <div className="singleMovieFlex">
           <img src={IMG_API + film.poster_path} alt="film poster" />
