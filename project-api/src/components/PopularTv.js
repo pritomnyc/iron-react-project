@@ -56,7 +56,7 @@ function PopularTv(props) {
               <div className="mylist-button-poppage-div">
                 <button
                   className="mylist-popbutton"
-                  onclick={() =>
+                  onClick={() =>
                     saveTvList({ name, poster_path, overview, vote_average })
                   }
                 >
