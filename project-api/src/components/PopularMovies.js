@@ -49,16 +49,22 @@ function PopularMovies(props) {
                 <h2 className="movie-overview">Overview:</h2>
                 <p>{overview}</p>
               </div>
-            </div>
-            <div className="mylist-button-poppage-div">
-              <button
-                className="mylist-popbutton"
-                onClick={() =>
-                  saveMovieList({ title, poster_path, overview, vote_average })
-                }
-              >
-                ➕ My List
-              </button>
+
+              <div className="mylist-button-poppage-div">
+                <button
+                  className="mylist-popbutton"
+                  onClick={() =>
+                    saveMovieList({
+                      title,
+                      poster_path,
+                      overview,
+                      vote_average,
+                    })
+                  }
+                >
+                  ➕ My List
+                </button>
+              </div>
             </div>
           </div>
         </>

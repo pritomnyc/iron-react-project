@@ -49,19 +49,20 @@ function PopularTv(props) {
                 </span>
               </div>
               <div className="tv-over">
-                <h2 className="tv-overview">Overview:</h2>
+                <h3 className="tv-overview">Overview:</h3>
                 <p>{overview}</p>
               </div>
-            </div>
-            <div className="mylist-button-poppage-div">
-              <button
-                className="mylist-popbutton"
-                onclick={() =>
-                  saveTvList({ name, poster_path, overview, vote_average })
-                }
-              >
-                ➕ My List
-              </button>
+
+              <div className="mylist-button-poppage-div">
+                <button
+                  className="mylist-popbutton"
+                  onclick={() =>
+                    saveTvList({ name, poster_path, overview, vote_average })
+                  }
+                >
+                  ➕ My List
+                </button>
+              </div>
             </div>
           </div>
         </>

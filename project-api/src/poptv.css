@@ -1,3 +1,7 @@
+.tv-container {
+  display: flex;
+}
+
 .tv-img {
   border-radius: 3px;
   padding: 1rem;
@@ -11,18 +15,18 @@
   font-size: 18px;
 }
 
-.tv-container {
-  display: flex;
-}
-
 .tv-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: maroon;
   font-size: 24px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px green, 0 0 30px green,
+    0 0 40px green, 0 0 55px green, 0 0 70px green;
 }
 
-.tv-overview {
-  font-size: 18px;
+.mylist-popbutton {
+  border-radius: 3px;
+  padding-bottom: 3px;
+  font-weight: bold;
 }
