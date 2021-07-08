@@ -3,24 +3,24 @@ import axios from "axios";
 import "../singleMovie.css";
 const IMG_API = "https://image.tmdb.org/t/p/w300";
 
-function SingleMovie(props) {
+function SingleTv(props) {
   console.log(props);
-  const [film, setFilm] = useState({});
+  const [tv, setTv] = useState({});
   const [video, setVideo] = useState({});
 
   useEffect(() => {
     console.log("is use effect working?");
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${props.match.params.movieId}?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US`
+        `https://api.themoviedb.org/3/tv/${props.match.params.tvId}?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US`
       )
       .then((res) => {
         console.log(res.data);
-        setFilm(res.data);
+        setTv(res.data);
       });
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${props.match.params.movieId}/videos?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US`
+        `https://api.themoviedb.org/3/tv/${props.match.params.tvId}/videos?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US`
       )
       .then((res) => {
         console.log(res.data);
@@ -30,7 +30,8 @@ function SingleMovie(props) {
 
   return (
     <div>
-      <div className="youtubevideodiv">
+      {/* TypeError: Cannot read property 'key' of undefined */}
+      {/* <div className="youtubevideodiv">
         <iframe
           className="singleVideo"
           src={`https://www.youtube.com/embed/${video[0].key}`}
@@ -39,28 +40,29 @@ function SingleMovie(props) {
           allowfullscreen
           title="video"
         />
-      </div>
+      </div> */}
       <div className="singleMovieContainer">
         <div className="singleMovieFlex">
-          <img src={IMG_API + film.poster_path} alt="film poster" />
+          <img src={IMG_API + tv.poster_path} alt="tv poster" />
         </div>
         <div className="singleDescription">
           <ul>
-            <li>Title: {film.title}</li>
-            <li>Score: {film.vote_average}</li>
-            <li>Release Date: {film.release_date}</li>
-            <li>Popularity: {film.popularity}</li>
-            <li>Box Office: {film.revenue}</li>
-            <li>Runtime: {film.runtime}</li>
+            <li>Title: {tv.name}</li>
+            <li>Score: {tv.vote_average}</li>
+            <li>Release Date: {tv.first_air_date}</li>
+            <li>Popularity: {tv.popularity}</li>
+            {/* <li>Network: {tv.networks[0].name}</li> */}
+            <li>Seasons: {tv.number_of_seasons}</li>
+            <li>Type: {tv.type}</li>
           </ul>
         </div>
       </div>
       <div className="singleOverview">
         <h1>Overview:</h1>
-        <p>{film.overview}</p>
+        <p>{tv.overview}</p>
       </div>
     </div>
   );
 }
 
-export default SingleMovie;
+export default SingleTv;

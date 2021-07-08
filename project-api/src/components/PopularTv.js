@@ -35,12 +35,12 @@ function PopularTv(props) {
   };
 
   function ShowTvShow() {
-    return tvShow.map(({ name, poster_path, overview, vote_average }) => {
+    return tvShow.map(({ id, name, poster_path, overview, vote_average }) => {
       return (
         <>
           <div className="tv-container">
             <div className="tv-img">
-              <Link to={`/pop-movies/${name}`}>
+              <Link to={`/pop-tv/${id}`}>
                 <img src={IMG_API + poster_path} alt={name} />
               </Link>
             </div>

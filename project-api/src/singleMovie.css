@@ -1,0 +1,30 @@
+.singleMovieContainer {
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content:space-around;
+    margin: 80px 150px;
+}
+.singleMovieFlex{
+    display:flex;
+    justify-content: space-between;
+}
+
+.singleDescription ul li{
+    list-style: none;
+    padding: 10px;
+    font-size: 30px;
+    font-weight:bold;
+}
+.singleOverview{
+    margin:0 150px;
+}
+.singleOverview p{
+    font-size:22px;
+}
+
+.singleVideo{
+    width:50.4%;
+    height: 380px;
+    padding: 10px 0 0 0 
+}

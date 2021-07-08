@@ -7,6 +7,7 @@ import List from "./components/List";
 import { Route, Switch } from "react-router-dom";
 import PopularTv from "./components/PopularTv";
 import SingleMovie from "./components/SingleMovie";
+import SingleTv from "./components/SingleTv";
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
           exact
           path="/pop-movies/:movieId"
           render={(props) => <SingleMovie {...props} />}
+        />
+        <Route
+          exact
+          path="/pop-tv/:tvId"
+          render={(props) => <SingleTv {...props} />}
         />
       </Switch>
     </div>
