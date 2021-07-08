@@ -7,6 +7,7 @@ import List from "./components/List";
 import { Route, Switch } from "react-router-dom";
 import PopularTv from "./components/PopularTv";
 import SingleMovie from "./components/SingleMovie";
+import Youtube from "./components/Youtube";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           render={(props) => <SingleMovie {...props} />}
         />
       </Switch>
+      <Youtube />
     </div>
   );
 }
