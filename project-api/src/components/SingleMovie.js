@@ -20,7 +20,7 @@ function SingleMovie(props) {
 
   return (
     <div>
-      <h1>is return working</h1>
+      <h1></h1>
       {film.title}
       {film.overview}
     </div>
