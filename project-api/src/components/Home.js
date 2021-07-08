@@ -18,15 +18,6 @@ function Home(props) {
       });
   }, []);
 
-  //useEffect for mylist button functionality
-  const saveMovieList = async (movie) => {
-    let res = await axios.post(
-      `https://ironrest.herokuapp.com/mymovielist`,
-      movie
-    );
-    console.log(res);
-  };
-
   //useEffect for movie API
 
   let [movieAPI, setMovieAPI] = useState({});
@@ -47,6 +38,15 @@ function Home(props) {
         console.log(results[randomIndex]);
       });
   }, []);
+
+  //useEffect for mylist button functionality
+  const saveMovieList = async (movie) => {
+    let res = await axios.post(
+      `https://ironrest.herokuapp.com/mymovielist`,
+      movie
+    );
+    console.log(res);
+  };
 
   // Function to show random movie onClick
 
@@ -100,9 +100,6 @@ function Home(props) {
   }, []);
 
   //Start of showRandomTVshow Function
-
-  // let [tvType, setTvType] = useState("tv");
-  // let [showTv, setShowTv] = useState(false);
 
   function ShowRandomTV() {
     return (
