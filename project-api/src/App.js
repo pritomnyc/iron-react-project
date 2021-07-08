@@ -7,7 +7,6 @@ import List from "./components/List";
 import { Route, Switch } from "react-router-dom";
 import PopularTv from "./components/PopularTv";
 import SingleMovie from "./components/SingleMovie";
-import Youtube from "./components/Youtube";
 
 function App() {
   return (
@@ -15,17 +14,24 @@ function App() {
       <Navbar />
       {/* <Home /> */}
       <Switch>
-        <Route exact path="/" render={(props) => <Home />} />
-        <Route exact path="/pop-movies" render={(props) => <PopularMovies />} />
-        <Route exact path="/pop-tv" render={(props) => <PopularTv />} />
-        <Route exact path="/mylist" render={(props) => <List />} />
+        <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
           exact
-          path="/single/:dynamicId"
+          path="/pop-movies"
+          render={(props) => <PopularMovies {...props} />}
+        />
+        <Route
+          exact
+          path="/pop-tv"
+          render={(props) => <PopularTv {...props} />}
+        />
+        <Route exact path="/mylist" render={(props) => <List {...props} />} />
+        <Route
+          exact
+          path="/pop-movies/:movieId"
           render={(props) => <SingleMovie {...props} />}
         />
       </Switch>
-      <Youtube />
     </div>
   );
 }

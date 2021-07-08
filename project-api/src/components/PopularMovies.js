@@ -32,12 +32,12 @@ function PopularMovies(props) {
   };
 
   function ShowPopMovies() {
-    return movies.map(({ title, poster_path, overview, vote_average }) => {
+    return movies.map(({ id, title, poster_path, overview, vote_average }) => {
       return (
         <>
           <div className="movie-container">
             <div className="movie-img">
-              <Link to={`/single/${title}`}>
+              <Link to={`/pop-movies/${id}`}>
                 <img src={IMG_API + poster_path} alt={title} />
               </Link>
             </div>

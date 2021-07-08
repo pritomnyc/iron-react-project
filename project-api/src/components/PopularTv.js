@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../poptv.css";
+import { Link } from "react-router-dom";
 const IMG_API = "https://image.tmdb.org/t/p/w300";
 
 function PopularTv(props) {
@@ -39,7 +40,9 @@ function PopularTv(props) {
         <>
           <div className="tv-container">
             <div className="tv-img">
-              <img src={IMG_API + poster_path} alt={name} />
+              <Link to={`/pop-movies/${name}`}>
+                <img src={IMG_API + poster_path} alt={name} />
+              </Link>
             </div>
             <div className="tvFlexDiv">
               <div className="tv-info">
