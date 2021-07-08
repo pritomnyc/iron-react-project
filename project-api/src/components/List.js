@@ -74,7 +74,7 @@ function List(props) {
               </div>
               <div className="deleteButtonDiv">
                 <button className="deleteButton" onClick={() => DeleteList(i)}>
-                  Delete
+                  Remove
                 </button>
               </div>
             </div>

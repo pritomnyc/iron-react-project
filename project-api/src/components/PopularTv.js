@@ -30,7 +30,7 @@ function PopularTv(props) {
       `https://ironrest.herokuapp.com/mymovielist`,
       tv
     );
-    console.log("this is onclick");
+    console.log(res);
   };
 
   function ShowTvShow() {
