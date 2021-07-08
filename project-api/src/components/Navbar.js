@@ -3,6 +3,7 @@ import Logo from "../images/homeLogo.png";
 import axios from "axios";
 import ReorderIcon from "@material-ui/icons/Reorder";
 import SearchIcon from "@material-ui/icons/Search";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
   //Search function starts
@@ -39,10 +40,10 @@ function Navbar(props) {
     <div className="Navbar">
       <div className="leftside">
         <div className="links" id={showLinks ? "hidden" : ""}>
-          <a href="/">Home</a>
-          <a href="/pop-movies">Movies</a>
-          <a href="/pop-tv">TV-Show</a>
-          <a href="/mylist">Favourites</a>
+          <Link to="/">Home</Link>
+          <Link to="/pop-movies">Movies</Link>
+          <Link to="/pop-tv">TV-Show</Link>
+          <Link to="/mylist">Favourites</Link>
         </div>
         <button onClick={() => setShowLinks(!showLinks)}>
           {""}

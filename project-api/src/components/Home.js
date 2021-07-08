@@ -66,7 +66,7 @@ function Home(props) {
               <p>Score: {movieAPI.vote_average}</p>
               <button
                 className="mylist-popbutton-home"
-                onClick={() => saveMovieList()}
+                onClick={() => saveMovieList(movieAPI.title)}
               >
                 ➕ Add
               </button>
