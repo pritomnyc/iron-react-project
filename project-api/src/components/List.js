@@ -92,3 +92,7 @@ function List(props) {
 }
 
 export default List;
+
+// axios.delete(
+//   `https://ironrest.herokuapp.com/mymovielist/60e71cdb2684610017dcbc8a`
+// );
