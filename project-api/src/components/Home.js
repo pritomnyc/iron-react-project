@@ -23,7 +23,6 @@ function Home(props) {
   let [movieAPI, setMovieAPI] = useState({});
 
   useEffect(() => {
-    console.log("is the new effect working ?");
     axios
       .get(
         `https://api.themoviedb.org/3/movie/now_playing?api_key=892790fdb1ea1d1f1eead753a54cd422&language=en-US&page=1`
@@ -45,7 +44,7 @@ function Home(props) {
       `https://ironrest.herokuapp.com/mymovielist`,
       movie
     );
-    console.log(res);
+    console.log(res.data);
   };
 
   // Function to show random movie onClick
@@ -66,7 +65,7 @@ function Home(props) {
               <p>Score: {movieAPI.vote_average}</p>
               <button
                 className="mylist-popbutton-home"
-                onClick={() => saveMovieList(movieAPI.title)}
+                onClick={() => saveMovieList(movieAPI)}
               >
                 ➕ Add
               </button>
@@ -83,7 +82,6 @@ function Home(props) {
   let [tvAPI, setTvAPI] = useState({});
 
   useEffect(() => {
-    console.log("is the tv effect working ?");
     axios
       .get(
         `https://api.themoviedb.org/3/tv/popular?api_key=892790fdb1ea1d1f1eead753a54cd422&page=1`
@@ -112,7 +110,12 @@ function Home(props) {
             <div className="movie-info-home">
               <h3>{tvAPI.name}</h3>
               <p>Score: {tvAPI.vote_average}</p>
-              <button className="mylist-popbutton-home">➕ Add</button>
+              <button
+                className="mylist-popbutton-home"
+                onClick={() => saveMovieList(tvAPI)}
+              >
+                ➕ Add
+              </button>
             </div>
           </div>
         </div>
