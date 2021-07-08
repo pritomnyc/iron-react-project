@@ -18,6 +18,15 @@ function Home(props) {
       });
   }, []);
 
+  //useEffect for mylist button functionality
+  const saveMovieList = async (movie) => {
+    let res = await axios.post(
+      `https://ironrest.herokuapp.com/mymovielist`,
+      movie
+    );
+    console.log(res);
+  };
+
   //useEffect for movie API
 
   let [movieAPI, setMovieAPI] = useState({});
@@ -55,7 +64,12 @@ function Home(props) {
             <div className="movie-info-home">
               <h3>{movieAPI.title}</h3>
               <p>Score: {movieAPI.vote_average}</p>
-              <button className="mylist-popbutton-home">➕ Add</button>
+              <button
+                className="mylist-popbutton-home"
+                onClick={() => saveMovieList()}
+              >
+                ➕ Add
+              </button>
             </div>
           </div>
         </div>
