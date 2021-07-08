@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../popmovies.css";
+import { Link } from "react-router-dom";
 
 const IMG_API = "https://image.tmdb.org/t/p/w300";
 
@@ -36,7 +37,9 @@ function PopularMovies(props) {
         <>
           <div className="movie-container">
             <div className="movie-img">
-              <img src={IMG_API + poster_path} alt={title} />
+              <Link to={`/single/${title}`}>
+                <img src={IMG_API + poster_path} alt={title} />
+              </Link>
             </div>
             <div className="movieFlexDiv">
               <div className="movie-info">

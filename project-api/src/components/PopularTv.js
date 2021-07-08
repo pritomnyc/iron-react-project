@@ -25,10 +25,10 @@ function PopularTv(props) {
 
   //Saving tv shows to my list
   //Saving movie to my list
-  const saveTvList = async (tv) => {
+  const saveTvList = async (tvShow) => {
     let res = await axios.post(
       `https://ironrest.herokuapp.com/mymovielist`,
-      tv
+      tvShow
     );
     console.log(res);
   };
