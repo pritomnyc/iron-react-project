@@ -55,7 +55,7 @@ function Home(props) {
             <div className="movie-info-home">
               <h3>{movieAPI.title}</h3>
               <p>Score: {movieAPI.vote_average}</p>
-              <button className="mylist-popbutton-home">+ My List</button>
+              <button className="mylist-popbutton-home">➕ Add</button>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ function Home(props) {
             <div className="movie-info-home">
               <h3>{tvAPI.name}</h3>
               <p>Score: {tvAPI.vote_average}</p>
-              <button className="mylist-popbutton-home">+ My List</button>
+              <button className="mylist-popbutton-home">➕ Add</button>
             </div>
           </div>
         </div>

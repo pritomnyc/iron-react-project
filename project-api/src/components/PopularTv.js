@@ -60,7 +60,7 @@ function PopularTv(props) {
                     saveTvList({ name, poster_path, overview, vote_average })
                   }
                 >
-                  ➕ My List
+                  ➕ Add to favourites
                 </button>
               </div>
             </div>

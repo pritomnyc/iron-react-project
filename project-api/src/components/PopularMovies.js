@@ -62,7 +62,7 @@ function PopularMovies(props) {
                     })
                   }
                 >
-                  ➕ My List
+                  ➕ Add to favourites
                 </button>
               </div>
             </div>
