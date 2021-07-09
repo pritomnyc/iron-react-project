@@ -13,8 +13,9 @@
 .singleDescription ul li {
   list-style: none;
   padding: 10px;
-  font-size: 30px;
+  font-size: 29px;
   font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px green, 0 0 30px green,
     0 0 40px green, 0 0 55px green, 0 0 70px green;
 }
