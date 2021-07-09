@@ -52,7 +52,7 @@ function SingleMovie(props) {
             <li>Release Date: {film.release_date}</li>
             <li>Popularity: {film.popularity}</li>
             <li>Box Office: {film.revenue}</li>
-            <li>Runtime: {film.runtime}</li>
+            <li>Runtime: {film.runtime} mins</li>
           </ul>
         </div>
       </div>
