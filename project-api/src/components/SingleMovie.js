@@ -56,12 +56,28 @@ function SingleMovie(props) {
         </div>
         <div className="singleDescription">
           <ul>
-            <li>Title: {film.title}</li>
-            <li>Score: {film.vote_average}</li>
-            <li>Release Date: {film.release_date}</li>
-            <li>Popularity: {film.popularity}</li>
-            <li>Box Office: {film.revenue}</li>
-            <li>Runtime: {film.runtime}</li>
+            <li>
+              Title: <span style={{ color: `maroon` }}>{film.title}</span>
+            </li>
+            <li>
+              Score:{" "}
+              <span style={{ color: `maroon` }}>{film.vote_average}</span>
+            </li>
+            <li>
+              Release Date:{" "}
+              <span style={{ color: `maroon` }}>{film.release_date}</span>
+            </li>
+            <li>
+              Popularity:{" "}
+              <span style={{ color: `maroon` }}>{film.popularity}</span>
+            </li>
+            <li>
+              Box Office:{" "}
+              <span style={{ color: `maroon` }}>{film.revenue}</span>
+            </li>
+            <li>
+              Runtime: <span style={{ color: `maroon` }}>{film.runtime}</span>
+            </li>
             <li>
               <button
                 className="mylist-popbutton"
