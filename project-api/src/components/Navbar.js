@@ -44,17 +44,24 @@ function Navbar(props) {
     return searchResults.map(({ id, title, poster_path }) => {
       return (
         <div
+          className="searchbackdiv"
           style={{
-            backgroundColor: `white`,
-            height: `25vh`,
+            backgroundColor: `rgba(255, 255, 255, 0.15)`,
+            height: `27vh`,
             width: `18vw`,
             position: `relative`,
           }}
         >
-          <div className="movie-container">
+          <div
+            className="movie-container"
+            style={{ display: `flex`, flexDirection: `column` }}
+          >
             <div className="movie-img">
+              <img src={IMG_API + poster_path} alt={title} />
+            </div>
+            <div>
               <Link to={`/pop-movies/${id}`}>
-                <img src={IMG_API + poster_path} alt={title} />
+                <button className="detailsButton">Get Details</button>
               </Link>
             </div>
             {/* <div className="movieFlexDiv">
@@ -70,6 +77,13 @@ function Navbar(props) {
       );
     });
   }
+
+  // const searchNone = () => {
+  //   <div className="searchbackdiv" style={{ display: `hidden` }}>
+  //     <ShowSearch style={{ display: `hidden` }} />
+  //   </div>;
+  //   console.log(`is this working?`);
+  // };
 
   return (
     <div className="Navbar">

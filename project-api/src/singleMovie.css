@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
-  margin: 80px 150px;
+  margin: 50px 150px;
 }
 .singleMovieFlex {
   display: flex;
@@ -33,6 +33,7 @@
   background: rgba(255, 255, 255, 0.15);
   border-radius: 6px;
   padding: 30px 26px;
+  margin : 150px 150px
   /* min-height: 200px; */
 }
 
