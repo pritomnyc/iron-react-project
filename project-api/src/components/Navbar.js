@@ -5,11 +5,12 @@ import ReorderIcon from "@material-ui/icons/Reorder";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
 
-const IMG_API = "https://image.tmdb.org/t/p/w300";
+const IMG_API = "https://image.tmdb.org/t/p/w200";
 
 function Navbar(props) {
   //Search function starts
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const [showLinks, setShowLinks] = useState(false);
   const handleOnSubmit = () => {
     //condition of search from API
@@ -19,7 +20,7 @@ function Navbar(props) {
           `https://api.themoviedb.org/3/search/movie?&api_key=892790fdb1ea1d1f1eead753a54cd422&query=${searchTerm}`
         )
         .then((res) => {
-          setSearchTerm(res.data.results);
+          setSearchResults(res.data.results);
           //console.log(res);
         });
 
@@ -29,6 +30,7 @@ function Navbar(props) {
 
   const handleOnChange = (e) => {
     setSearchTerm(e.target.value);
+    // handleOnSubmit();
   };
   console.log(searchTerm);
 
@@ -38,28 +40,36 @@ function Navbar(props) {
   };
   // //End of Search
 
-  // function ShowSearch() {
-  //   return searchTerm.map(({ title, poster_path, vote_average }) => {
-  //     return (
-  //       <>
-  //         <div className="movie-container">
-  //           <div className="movie-img">
-  //             {/* <Link to={`/pop-movies/${id}`}></Link> */}
-  //             <img src={IMG_API + poster_path} alt={title} />
-  //           </div>
-  //           <div className="movieFlexDiv">
-  //             <div className="movie-info">
-  //               <h3>{title}</h3>
-  //               <span>
-  //                 <strong>{vote_average}</strong>
-  //               </span>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </>
-  //     );
-  //   });
-  // }
+  function ShowSearch() {
+    return searchResults.map(({ id, title, poster_path }) => {
+      return (
+        <div
+          style={{
+            backgroundColor: `white`,
+            height: `25vh`,
+            width: `18vw`,
+            position: `relative`,
+          }}
+        >
+          <div className="movie-container">
+            <div className="movie-img">
+              <Link to={`/pop-movies/${id}`}>
+                <img src={IMG_API + poster_path} alt={title} />
+              </Link>
+            </div>
+            {/* <div className="movieFlexDiv">
+              <div className="movie-info">
+                <h3>{title}</h3>
+                <span>
+                  <strong>{vote_average}</strong>
+                </span>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      );
+    });
+  }
 
   return (
     <div className="Navbar">
@@ -85,12 +95,12 @@ function Navbar(props) {
           />
         </form>
         <button>
-          <SearchIcon />
+          <SearchIcon onClick={submitSearch} />
         </button>
       </div>
-      {/* <div>
+      <div>
         <ShowSearch />
-      </div> */}
+      </div>
     </div>
   );
 }

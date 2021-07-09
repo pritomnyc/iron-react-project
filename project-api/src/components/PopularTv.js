@@ -18,11 +18,11 @@ function PopularTv(props) {
         `https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=892790fdb1ea1d1f1eead753a54cd422&page=1`
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setTvShow(res.data.results);
       });
   }, []);
-  console.log(tvShow);
+  // console.log(tvShow);
 
   //Saving tv shows to my list
   //Saving movie to my list

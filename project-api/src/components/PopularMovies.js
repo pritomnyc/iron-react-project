@@ -16,11 +16,11 @@ function PopularMovies(props) {
         `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=892790fdb1ea1d1f1eead753a54cd422&page=1`
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setMovies(res.data.results);
       });
   }, []);
-  console.log(movies);
+  // console.log(movies);
 
   //Saving movie to my list
   const saveMovieList = async (movie) => {

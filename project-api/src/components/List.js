@@ -8,14 +8,13 @@ function List(props) {
   let [tvList, setTvList] = useState([]);
 
   useEffect(async function () {
-    console.log("is this working?");
     let res = await axios.get(`https://ironrest.herokuapp.com/mymovielist`);
     setMovieList(res.data);
-    console.log(res.data);
+    // console.log(res.data);
 
     let res2 = await axios.get(`https://ironrest.herokuapp.com/mymovielist`);
     setTvList(res2.data);
-    console.log(res2.data);
+    // console.log(res2.data);
   }, []);
 
   // function ShowMyMovies({ title, poster_path, overview, vote_average }) {
@@ -52,7 +51,6 @@ function List(props) {
     );
     copyOfList.splice(i, 1);
     setMovieList(copyOfList);
-    console.log("hello,i", i);
   }
 
   const ShowMyMovies = () => {

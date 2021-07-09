@@ -154,6 +154,8 @@ button:hover {
     margin: 10px;
     font-size: 25px;
   }
+
+
 }
 /* .homeLogo {
   width: 35px;
@@ -175,6 +177,14 @@ button:hover {
   margin-top: 1px;
   font-size: 18px;
   border: none;
+} */
+
+/* .resultsDiv{
+  background-color:white;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  top: 20vw;
 } */
 
 /* CSS for random spin section */
