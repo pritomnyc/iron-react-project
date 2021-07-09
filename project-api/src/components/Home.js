@@ -57,7 +57,9 @@ function Home(props) {
       <>
         <div className="movie-container-home">
           <div className="movie-img-home">
-            <img src={IMG_API + movieAPI.poster_path} alt={movieAPI.title} />
+            <Link to={`/pop-movies/${movieAPI.id}`}>
+              <img src={IMG_API + movieAPI.poster_path} alt={movieAPI.title} />
+            </Link>
           </div>
           <div className="movieFlexDiv-home">
             <div className="movie-info-home">
@@ -104,7 +106,9 @@ function Home(props) {
       <>
         <div className="movie-container-home">
           <div className="movie-img-home">
-            <img src={IMG_API + tvAPI.poster_path} alt={tvAPI.name} />
+            <Link to={`/pop-tv/${tvAPI.id}`}>
+              <img src={IMG_API + tvAPI.poster_path} alt={tvAPI.name} />
+            </Link>
           </div>
           <div className="movieFlexDiv-home">
             <div className="movie-info-home">

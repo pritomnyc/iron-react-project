@@ -28,6 +28,15 @@ function SingleMovie(props) {
       });
   }, []);
 
+  //function to add movie to favorites from single page
+  const saveMovieList = async (movie) => {
+    let res = await axios.post(
+      `https://ironrest.herokuapp.com/mymovielist`,
+      movie
+    );
+    console.log(res);
+  };
+
   return (
     <div>
       {/* TypeError: Cannot read property 'key' of undefined */}
@@ -52,7 +61,15 @@ function SingleMovie(props) {
             <li>Release Date: {film.release_date}</li>
             <li>Popularity: {film.popularity}</li>
             <li>Box Office: {film.revenue}</li>
-            <li>Runtime: {film.runtime} mins</li>
+            <li>Runtime: {film.runtime}</li>
+            <li>
+              <button
+                className="mylist-popbutton"
+                onClick={() => saveMovieList(film)}
+              >
+                ➕ Add to favourites
+              </button>
+            </li>
           </ul>
         </div>
       </div>
