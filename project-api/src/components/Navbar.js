@@ -5,6 +5,8 @@ import ReorderIcon from "@material-ui/icons/Reorder";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
 
+const IMG_API = "https://image.tmdb.org/t/p/w300";
+
 function Navbar(props) {
   //Search function starts
   const [searchTerm, setSearchTerm] = useState("");
@@ -36,6 +38,29 @@ function Navbar(props) {
   };
   // //End of Search
 
+  // function ShowSearch() {
+  //   return searchTerm.map(({ title, poster_path, vote_average }) => {
+  //     return (
+  //       <>
+  //         <div className="movie-container">
+  //           <div className="movie-img">
+  //             {/* <Link to={`/pop-movies/${id}`}></Link> */}
+  //             <img src={IMG_API + poster_path} alt={title} />
+  //           </div>
+  //           <div className="movieFlexDiv">
+  //             <div className="movie-info">
+  //               <h3>{title}</h3>
+  //               <span>
+  //                 <strong>{vote_average}</strong>
+  //               </span>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </>
+  //     );
+  //   });
+  // }
+
   return (
     <div className="Navbar">
       <div className="leftside">
@@ -63,6 +88,9 @@ function Navbar(props) {
           <SearchIcon />
         </button>
       </div>
+      {/* <div>
+        <ShowSearch />
+      </div> */}
     </div>
   );
 }
