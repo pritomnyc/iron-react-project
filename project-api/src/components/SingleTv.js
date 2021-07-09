@@ -28,6 +28,15 @@ function SingleTv(props) {
       });
   }, []);
 
+  //function to add tv show to favorites from single page
+  const saveMovieList = async (tv) => {
+    let res = await axios.post(
+      `https://ironrest.herokuapp.com/mymovielist`,
+      tv
+    );
+    console.log(res);
+  };
+
   return (
     <div>
       {/* TypeError: Cannot read property 'key' of undefined */}
@@ -54,6 +63,14 @@ function SingleTv(props) {
             {/* <li>Network: {tv.networks[0].name}</li> */}
             <li>Seasons: {tv.number_of_seasons}</li>
             <li>Type: {tv.type}</li>
+            <li>
+              <button
+                className="mylist-popbutton"
+                onClick={() => saveMovieList(tv)}
+              >
+                ➕ Add to favourites
+              </button>
+            </li>
           </ul>
         </div>
       </div>
