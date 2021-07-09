@@ -43,7 +43,7 @@ function SingleMovie(props) {
       <div className="youtubevideodiv">
         <iframe
           className="singleVideo"
-          src={`https://www.youtube.com/embed/${video[0].key}`}
+          src={`https://www.youtube.com/embed/${video[0]?.key}`}
           frameborder="0"
           allow="autoplay; encrypted-media"
           allowfullscreen
