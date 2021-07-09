@@ -40,16 +40,16 @@ function SingleTv(props) {
   return (
     <div>
       {/* TypeError: Cannot read property 'key' of undefined */}
-      {/* <div className="youtubevideodiv">
+      <div className="youtubevideodiv">
         <iframe
           className="singleVideo"
-          src={`https://www.youtube.com/embed/${video[0].key}`}
+          src={`https://www.youtube.com/embed/${video[0]?.key}`}
           frameborder="0"
           allow="autoplay; encrypted-media"
           allowfullscreen
           title="video"
         />
-      </div> */}
+      </div>
       <div className="singleMovieContainer">
         <div className="singleMovieFlex">
           <img src={IMG_API + tv.poster_path} alt="tv poster" />
