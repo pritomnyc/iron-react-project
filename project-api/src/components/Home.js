@@ -64,7 +64,7 @@ function Home(props) {
           <div className="movieFlexDiv-home">
             <div className="movie-info-home">
               <h3>{movieAPI.title}</h3>
-              <p>Score: {movieAPI.vote_average}</p>
+              <h4>Score: {movieAPI.vote_average}</h4>
               <button
                 className="mylist-popbutton-home"
                 onClick={() => saveMovieList(movieAPI)}
@@ -113,7 +113,7 @@ function Home(props) {
           <div className="movieFlexDiv-home">
             <div className="movie-info-home">
               <h3>{tvAPI.name}</h3>
-              <p>Score: {tvAPI.vote_average}</p>
+              <h4>Score: {tvAPI.vote_average}</h4>
               <button
                 className="mylist-popbutton-home"
                 onClick={() => saveMovieList(tvAPI)}
