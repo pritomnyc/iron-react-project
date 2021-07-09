@@ -56,13 +56,28 @@ function SingleTv(props) {
         </div>
         <div className="singleDescription">
           <ul>
-            <li>Title: {tv.name}</li>
-            <li>Score: {tv.vote_average}</li>
-            <li>Release Date: {tv.first_air_date}</li>
-            <li>Popularity: {tv.popularity}</li>
+            <li>
+              Title: <span style={{ color: `maroon` }}>{tv.name}</span>
+            </li>
+            <li>
+              Score: <span style={{ color: `maroon` }}>{tv.vote_average}</span>
+            </li>
+            <li>
+              Release Date:{" "}
+              <span style={{ color: `maroon` }}>{tv.first_air_date}</span>
+            </li>
+            <li>
+              Popularity:{" "}
+              <span style={{ color: `maroon` }}>{tv.popularity}</span>
+            </li>
             {/* <li>Network: {tv.networks[0].name}</li> */}
-            <li>Seasons: {tv.number_of_seasons}</li>
-            <li>Type: {tv.type}</li>
+            <li>
+              Seasons:{" "}
+              <span style={{ color: `maroon` }}>{tv.number_of_seasons}</span>
+            </li>
+            <li>
+              Type: <span style={{ color: `maroon` }}>{tv.type}</span>
+            </li>
             <li>
               <button
                 className="mylist-popbutton"

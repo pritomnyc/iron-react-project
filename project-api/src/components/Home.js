@@ -209,7 +209,9 @@ function Home(props) {
 
         <div className="browsePopButtonDiv">
           <Link to="/pop-movies">
-            <button className="browsePop">Browse Popular</button>
+            <button className="browsePop">
+              <strong>Browse Popular</strong>
+            </button>
           </Link>
         </div>
       </div>

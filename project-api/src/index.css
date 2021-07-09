@@ -283,5 +283,6 @@ button:hover {
   border-radius: 30px;
   padding: 5px 5px;
   font-size: 20px;
-  background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+  font-weight: bold;
+  background-color: cornflowerblue;
 }
